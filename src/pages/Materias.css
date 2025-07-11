@@ -1,0 +1,167 @@
+/* General styles */
+.body-materias {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% auto;
+    background-color: #7fd6ff;
+    overflow: scroll;
+}
+/* Estilo do cabeçalho */
+.custom-header-materias {
+    text-align: center;
+    color: black;
+    margin: 2%;
+}
+
+.custom-header-materias h1 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+/* Estilo do container de vídeos */
+.container-materias {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 5%;
+    padding: 20px;
+    max-width: 100%;
+    width: calc(100% - 50px);
+}
+
+/* Card de cada matéria */
+.image-container-materias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease all 0.5s;
+}
+
+.image-container-materias a{
+    transition: ease all 0.3s;
+}
+
+.image-container-materias a:hover{
+    transform: scale(1.1);
+    transition: ease all 0.3s;
+}
+
+.image-container-materias img {
+    border-radius: 12px;
+    box-shadow: 1px 1px 15px 15px;
+}
+
+.image-container-materias h2 {
+    margin: 1rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.image-container-materias button {
+    background-color: #ef7466;
+    color: rgb(11, 11, 11);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-container-materias-materias button:hover {
+    background-color: #edb976;
+}
+
+/* Estilo para o container do formulario de adicionar modulo */
+.modulo-adicionar-App {
+    width: 100%;
+    max-width: calc(1000% - 10px);
+    padding: 20px;
+    background-color: #bdf6ea9b;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.modulo-adicionar-App form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.modulo-adicionar-App input[type="radio"]
+.modulo-adicionar-App input[type="text"],
+.modulo-adicionar-App input[type="color"],
+.modulo-adicionar-App input[type="file"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #070707;
+    color: #070707;
+}
+
+.modulo-adicionar-App input[type="color"]{
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.modulo-adicionar-App button {
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modulo-adicionar-App button:hover {
+    background-color: #efc176;
+}
+
+.modulo-adicionar-App h2 {
+    color: #020202;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.materias-list {
+    margin-top: 40px;
+}
+
+.materias-list h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c2c2c;
+}
+
+.materias-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.materias-list li {
+    background-color: #0b0b0b;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+.image-container{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+.image-container h2{
+    margin-top: 10px;
+}
+.image-container button{
+    margin-top: 5px;
+}

@@ -1,0 +1,110 @@
+/* music.css */
+
+/* Estilos gerais */
+.body-music{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% auto;
+    background-color: #ffe431;
+    overflow: scroll;
+    padding: 10px;
+    /* max-width: 1200px; */
+}
+
+.custom-header-music {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-header-music h1 {
+    font-size: 2.5rem;
+    color: black;
+}
+
+/* Estilos para o container de vídeos */
+.container-music {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 5%;
+    max-width: 100%;
+    width: calc(100% - 50px);
+}
+
+.video-container-music {
+    width: 100%;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease all 0.5s;
+}
+
+.video-container-music :hover {
+    transform: translateY(-5px);
+}
+
+.video-container-music iframe {
+    border: none;
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.video-container-m h2 {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #040404;
+}
+
+/* Estilos para o formulário de adicionar vídeo */
+.add-video-form-m {
+    margin-top: 30px;
+    width: 200%;
+    max-width: 200px; /* Largura máxima do formulário */
+    padding: 20px;
+    background-color: #f43636;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+.add-video-form-m h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000000;
+    text-align: center;
+}
+
+.add-video-form-m input {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.add-video-form-m button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-video-form-m button:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-weight: bold;
+    
+}
+
+.input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.colorInput {
+    padding: 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 40px;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #97c2f1;
+    color: #8e5e5e;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #8ed4ef7f;
+}

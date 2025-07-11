@@ -1,0 +1,45 @@
+.body-Game{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% auto;
+    background-color: lightsalmon;
+}
+.custom-header-Game{
+    text-align: center;
+    color: black;
+}
+.container-Game h2{
+    font-family: 'Times New Ariel', Times, serif;
+    color:black;
+    text-align: center;
+}
+.container-Game{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 17% 17% 17% 17% 17%;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 5%;
+}
+.image-container-Game{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease all 0.5s;
+}
+.image-container-Game a{
+    transition: ease all 0.3s;
+    transform: ease all 0.3s;
+}
+.image-container-Game a:hover{
+    transform: scale(1.1);
+    transition: ease all 0.3s;
+}
+
+.image-container-Game img{
+    border-radius: 12px;
+    box-shadow: 1px 1px 15px 15px;
+}

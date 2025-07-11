@@ -1,0 +1,64 @@
+.game-container {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  background-color: rgb(94, 232, 232);
+}
+
+.game-container .shadows-container,
+.animals-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os itens */
+  margin-top: 20px;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se não couberem */
+}
+
+.shadow {
+  position: relative;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadow img {
+  width: 200px;
+  height: 200px;
+}
+
+.animals-container img {
+  width: 200px;
+  height: 200px;
+  cursor: grab;
+}
+
+.matched-image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+}
+.reste-button{
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: beige;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+.reset-button:hover {
+  background-color: #45a049;
+}
+.completion-message {
+  text-align: center;
+  margin-bottom: 20px;
+}

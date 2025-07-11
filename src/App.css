@@ -1,0 +1,141 @@
+.body-App{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% auto;
+    background-color: #7fd6ff;
+    overflow: scroll;
+}
+.custom-header-App{
+    text-align: center;
+    font-style: oblique;
+    color: black;
+    margin: 2%;
+}
+.custom-header-App h1{
+  margin: 0%;
+  font-family: 'Times New Roman', 'Times New Roman', Times, serif;
+}
+.body-App .container-App {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 17% 17% 17% 17% 17%;
+  justify-content: space-around;
+  align-items: start;
+  margin-top: 5%;
+}
+.body-App .container-App .image-container-App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: ease all 0.5s;
+}
+.body-App .container-App .image-container-App a{
+  transition: ease all 0.3s;
+  
+}
+.body-App .container-App .image-container-App a:hover{
+  transform: scale(1.1);
+  transition: ease all 0.3s;
+}
+
+.body-App .container-App .image-container-App img{
+  border-radius: 12px;
+  box-shadow: 1px 1px 15px 15px;
+}
+/* Estilos para o container do formulário de adicionar módulo */
+.modulo-adicionar-App {
+  width: 100%;
+  max-width: calc(100% - 100px);
+  padding: 20px;
+  background-color: #2ac0d7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+/* Estilos para os inputs e o botão no formulário */
+.modulo-adicionar-App form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.modulo-adicionar-App input[type="radio"]
+.modulo-adicionar-App input[type="text"],
+.modulo-adicionar-App input[type="color"],
+.modulo-adicionar-App input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #151414;
+}
+
+/* Estilo específico para o seletor de cor */
+.modulo-adicionar-App input[type="color"] {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para o botão de submissão */
+.modulo-adicionar-App button {
+  padding: 16px;
+  font-size: 16px;
+  background-color: #b5f67c;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.modulo-adicionar-App button:hover {
+  background-color: #05494d;
+}
+.modulo-adicionar-App h2{
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* Estilos para a lista de matérias carregadas */
+.materias-list {
+  margin-top: 40px;
+}
+
+.materias-list h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.materias-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.materias-list li {
+  background-color: #ea6e6e;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+.image-container{
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  background-color: #000000;
+}
+.image-container h2{
+  margin-top: 10px;
+}
+.image-container button{
+  margin-top: 5px;
+}

@@ -1,0 +1,58 @@
+/* Estilos geral da pagina */
+.body-most{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% auto;
+    background-color: #92ecc8;
+    overflow: scroll;
+}
+/* Estilo do cabeçalho */
+.custom-header-most{
+    text-align: center;
+    color: black;
+}
+
+.custom-header-most h1{
+    font-family: 'Times New Roman', Times, serif; /* Corrigido o nome da fonte */
+    color: black;
+    text-align: center;
+}
+/* Estilo do container de videos */
+.container-most{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout responsivo */
+    gap: 20px; /* Espaçamento entre os videos */
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 5%;
+    padding: 20px; /* Adicionado padding para espaçamento interno */
+    max-width: 100%;
+    width: calc(100% - 50px);
+}
+/* Estilo individual dos vídeos */
+.video-container-most{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease all 0.5s;
+}
+.video-container-most a {
+    transition: ease all 0.3s;
+}
+
+.video-container-most a:hover {
+    transform: scale(1.1);
+    transition: ease all 0.3s;
+}
+
+/* Estilo do iframe (vídeo) */
+.video-container-most iframe{
+    border-radius: 16px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5); /* Corrigido o valor da sombra */
+    width: 100%; /* Garantir que o iframe ocupe 100% do container */
+    height: 200px; /* Altura fixa para os vídeos */
+}
