@@ -17,7 +17,7 @@ import PaginaCriada from "../pages/PaginaCriada";
 import AnimalShadowGame from "../pages/jogo_da_sobra/AnimalShadowGame";
 import VideoPlayer from "../pages/videos/VideoPlayer";
 import MateriaCriadas from "../pages/materiaCriada";
-import OppositeGame from "../pages/jogo-opostos/OppositeGame";
+import OppositeGame from "../pages/jogo-opostos/OpositeGame";
 
 const Rotas = () => {
     

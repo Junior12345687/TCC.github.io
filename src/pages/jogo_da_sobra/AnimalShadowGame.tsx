@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bird from "./imagens/bird.png";
 import cat from "./imagens/cat.png";
 import dog from "./imagens/dog.png";
@@ -7,6 +7,8 @@ import catShadow from "./imagens/catshadow.png";
 import dogShadow from "./imagens/dogshadow.png";
 import sapo from "./imagens/sapo.jpeg";
 import sapoShadow from "./imagens/saposhadow.png";
+import urso from "./imagens/urso.jpeg";
+import ursoShadow from "./imagens/ursoshadow.png";
 import './index.css'
 
 interface Animal {
@@ -16,16 +18,34 @@ interface Animal {
     shadow: string;
 }
 
-const animals: Animal[] = [
+const initialAnimals: Animal[] = [
     { id: 1, name: 'Gato', image: cat, shadow: catShadow },
     { id: 2, name: 'Cachorro', image: dog, shadow: dogShadow },
     { id: 3, name: 'Pássaro', image: bird, shadow: birdShadow },
-    { id: 3, name: 'Sapo', image: sapo, shadow: sapoShadow },
+    { id: 4, name: 'Sapo', image: sapo, shadow: sapoShadow },
+    { id: 5, name: 'usro', image: urso, shadow: ursoShadow},
     // Adicione mais animais conforme necessário
 ];
 
 const AnimalShadowGame: React.FC = () => {
     const [matched, setMatched] = useState<number[]>([]);
+    const [shuffledAnimals, setShuffledAnimals] = useState<Animal[]>([]);
+
+    // Embaralha os animais quando o componente é montado
+    useEffect(() => {
+        shuffleAnimals();
+    }, []);
+
+    const shuffleAnimals = () => {
+        // Cria uma cópia do array para não modificar o original
+        const shuffled = [...initialAnimals];
+        // Algoritmo Fisher-Yates para embaralhar
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        setShuffledAnimals(shuffled);
+    };
 
     const handleDrop = (event: React.DragEvent<HTMLDivElement>, shadowId: number): void => {
         event.preventDefault();
@@ -39,25 +59,26 @@ const AnimalShadowGame: React.FC = () => {
         event.dataTransfer.setData('animalId', animalId.toString());
     };
 
-    const resetGame = (): void =>{
+    const resetGame = (): void => {
         setMatched([]);
+        shuffleAnimals(); // Embaralha novamente ao reiniciar
     };
 
-    const isCompleted = matched.length === animals.length;
+    const isCompleted = matched.length === initialAnimals.length;
 
     return (
-        <div className="game-container">
+        <div className="Shadowgame-container">
             <h1>Quebra-Cabeça de Sombras de Animais</h1>
             {isCompleted && (
-                <div className="compleiton-message">
-                    <h2>Parabens, voçe acertou todos os animais!</h2>
-                    <button onDoubleClick={resetGame} className="reset-button">
+                <div className="completion-message">
+                    <h2>Parabéns, você acertou todos os animais!</h2>
+                    <button onClick={resetGame} className="reset-button">
                         Jogar Novamente
                     </button>
                 </div>
             )}
             <div className="shadows-container">
-                {animals.map((animal) => (
+                {shuffledAnimals.map((animal) => (
                     <div
                         key={animal.id}
                         className="shadow"
@@ -79,7 +100,7 @@ const AnimalShadowGame: React.FC = () => {
                 ))}
             </div>
             <div className="animals-container">
-                {animals.map((animal) => (
+                {initialAnimals.map((animal) => (
                     !matched.includes(animal.id) && (
                         <img
                             key={animal.id}
@@ -94,7 +115,7 @@ const AnimalShadowGame: React.FC = () => {
             </div>
             {!isCompleted && (
                 <button onClick={resetGame} className="reset-button">
-                    reinicar o jogo
+                    Reiniciar o jogo
                 </button>
             )}
         </div>

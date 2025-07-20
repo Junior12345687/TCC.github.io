@@ -4,7 +4,11 @@ import night from "./images/night.png";
 import cardback from './images/cardback.png';
 import menino from './images/menino.jpeg';
 import menina from './images/menina.jpeg';
-import './Opoosto.css';
+import seco from './images/seco.png';
+import molhado from './images/molhado.png';
+import frente from './images/frente.png';
+import costas from './images/costa.png';
+import './Oposto.css';
 
 type Card = {
     id: number;
@@ -19,6 +23,8 @@ const OppositeGame = () => {
     const cardPairs = [
         { id: 1, image1: dia, image2: night },
         { id: 2, image1: menino, image2: menina },
+        { id: 3, image1: seco, image2: molhado},
+        { id: 4, image1: frente, image2: costas},
     ];
 
     const [cards, setCards] = useState<Card[]>([]);
@@ -110,19 +116,19 @@ const OppositeGame = () => {
     };
 
     return (
-        <div className='game-container'>
+        <div className='Opostgame-container'>
             <header>
                 <h1>Combine os Opostos</h1>
                 <p>Combine pares de Cartas opostas!</p>
             </header>
 
-            <div className='game-info'>
+            <div className='Opostgame-info'>
                 <p>Movimentos: {moves}</p>
                 <button onClick={initializeGame}>Reiniciar Jogo</button>
             </div>
 
             {gameCompleted ? (
-                <div className='game-complete'>
+                <div className='Opostgame-complete'>
                     <h2>Parabéns! Você completou o jogo em {moves} movimentos!</h2>
                     <button onClick={initializeGame}>Jogar Novamente</button>
                 </div>
