@@ -1,11 +1,13 @@
 export const palavrasComDicas = [
-    { palavra: 'CACHORRO', dica: 'Animal de estimação carnivoro' },
-    { palavra: 'GATO', dica: 'Felino mamífero carnívoro ' },
-    { palavra: 'ELEFANTE', dica: 'O Mamífero que tem olheras grandes e se encontra nos continentes Africano e Aziatico' },
-    { palavra: 'LOBO', dica: 'Mamífero carnívoro da América do Norte' },
-    { palavra: 'TIGRE', dica: 'Carnívoro da  Azia' },
-    { palavra: 'HIPOPOTAMO', dica: 'Animal mamivero que vive na agual e tambem e terestre' },
-    
+    { palavra: 'CACHORRO', dica: 'Qual é o melhor amigo do homem' },
+    { palavra: 'GATO', dica: 'Animal de estimação que mia e adora caçar ratos.' },
+    { palavra: 'ELEFANTE', dica: 'Grande mamífero terrestre, com orelhas grandes e tromba' },
+    { palavra: 'LOBO', dica: 'Predador alfa que uiva para a lua e vive em matilhas nas florestas' },
+    { palavra: 'TIGRE', dica: 'Grande felino carnívoro, símbolo de força na Ásia, com listras únicas' },
+    { palavra: 'HIPOPOTAMO', dica: 'Animal mamífero que vive na água e também é terrestre' },
+    { palavra: 'GIRAFA', dica: 'Qual é o animal com o maior pesocoço '},
+    { palavra: 'CANGURO', dica: 'Pode saltar até 3 metros de altura! Vive na Austrália e tem uma bolsa'},
+    { palavra: 'COBRA', dica: 'Animal venenoso que se rasteja'}
 ];
 export const escolherPalavra = () => {
     const index = Math.floor(Math.random() * palavrasComDicas.length);
