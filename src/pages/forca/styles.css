@@ -1,5 +1,5 @@
 body {
-    background-color: #19e827; /* Cor de fundo da página */
+    background-color: #09eff33c; /* Cor de fundo da página */
     margin: 0; /* Remove margens padrão */
     font-family: Arial, sans-serif; /* Fonte padrão */
     /* height: 100vh; */
@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: rgb(155, 242, 213);
+    background-color: rgb(36, 241, 231);
     color: black;
 }
 
@@ -60,7 +60,7 @@ button:hover {
     display: flex;
     justify-content: center;
 }
-  
+
   /* Estilos para a imagem da forca */
 .forca-container img {
     width: 50%;
@@ -73,7 +73,7 @@ button:hover {
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
     justify-content: center; /* Centraliza os itens horizontalmente */
     margin-top: 20px; /* Adiciona um espaço acima do teclado */
-  }
+}
   
   /* Estilos para os botões das letras */
 .teclado-container button {
@@ -81,7 +81,7 @@ button:hover {
     margin: 5px; /* Adiciona um espaço entre os botões */
     padding: 10px; /* Adiciona um preenchimento interno ao botão */
     font-size: 16px; /* Define o tamanho da fonte */
-    background-color: #4CAF50; /* Cor de fundo do botão */
+    background-color: #0c62ed; /* Cor de fundo do botão */
     color: white; /* Cor do texto do botão */
     border: none; /* Remove a borda padrão */
     border-radius: 5px; /* Arredonda os cantos do botão */
@@ -109,7 +109,7 @@ button:hover {
 }
   
 .result button:hover {
-    background-color: #3e8e41;
+    background-color: #42b6b8b9;
 }
 .dica-container {
     color: black;
@@ -118,8 +118,8 @@ button:hover {
 .adicionar-palavra-btn {
     margin: 10px;
     padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #1b9a8f91;
+    color: rgb(1, 1, 1);
     border: none;
     border-radius: 5px;
     cursor: pointer;
