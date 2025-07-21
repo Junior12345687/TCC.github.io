@@ -22,7 +22,7 @@ import OppositeGame from "../pages/jogo-opostos/OpositeGame";
 const Rotas = () => {
     
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/TCC.github.io">
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/Games" element={<Games />} />
