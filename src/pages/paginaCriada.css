@@ -1,0 +1,101 @@
+.pagina-criada {
+    width: 100%;
+    height: 100vh; /* Preenche a altura da tela */
+    display: grid;
+    grid-template-rows: 10% auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    transition: background-color 0.3s ease;
+    min-width: 100vh;
+    box-sizing: border-box;
+}
+
+.custom-header-pagina-criada{
+    text-align: center;
+    color: #000000;
+    margin: 8%;
+}
+.custom-header-pagina-criada h1 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+/* estilo do container dos videos */
+.video-container {
+    width: 100%;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 5%;
+    padding: 20px;
+    max-width: 1200px; /* Limita a largura do container de vídeos */
+    width: calc(100% - 50px);
+}
+/* estilo individual dos videos */
+.video-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease all 0.5s;
+}
+.video-item a{
+    border-radius: 16px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5); /* Corrigido o valor da sombra */
+    width: 100%;
+    height: 200px; /* Altura fixa para os iframes */
+}
+.video-item iframe {
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 200px; /* Altura fixa para os iframes */
+}
+
+/* Estilo do formulário para adicionar novos vídeos */
+.add-video-form-p {
+    margin-top: 30px;
+    width: 200%;
+    max-width: 200px; /* Largura máxima do formulário */
+    padding: 10px;
+    background-color: rgba(230, 71, 71, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+.custom-header-add-video h2{
+    text-align: center;
+}
+
+.add-video-form-p input {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.add-video-form-p button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: rgb(16, 13, 13);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-video-form-p button:hover {
+    background-color: #0056b3;
+}

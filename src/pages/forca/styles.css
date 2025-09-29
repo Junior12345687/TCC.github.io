@@ -1,0 +1,149 @@
+body {
+    background-color: #09eff33c; /* Cor de fundo da página */
+    margin: 0; /* Remove margens padrão */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    /* height: 100vh; */
+}
+
+/* Estilos para o container do jogo */
+.jogo-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(36, 241, 231);
+    color: black;
+}
+
+  /* Estilos para o texto de boas-vindas */
+#text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+  /* Estilos para o botão de iniciar jogo */
+button {
+    background-color: #297eb7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    max-width: 150px;
+    margin:  0 auto;
+}
+  
+button:hover {
+    background-color: #10e8c0;
+}
+  
+  /* Estilos para o container da palavra */
+.palavra-container {
+    margin-top: 20px;
+    font-size: 24px;
+    color: black;
+}
+  
+  /* Estilos para as letras da palavra */
+.letra {
+    margin-right: 10px;
+    font-size: 24px;
+    color: black;
+}
+  
+  /* Estilos para o container da forca */
+.forca-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+  /* Estilos para a imagem da forca */
+.forca-container img {
+    width: 50%;
+    height: 50%;
+}
+
+/* Estilos para o container do teclado */
+.teclado-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    margin-top: 20px; /* Adiciona um espaço acima do teclado */
+}
+  
+  /* Estilos para os botões das letras */
+.teclado-container button {
+    flex: 0 0 12.5%; /* Cada botão ocupará 12.5% da largura do container (8 botões por linha) */
+    margin: 5px; /* Adiciona um espaço entre os botões */
+    padding: 10px; /* Adiciona um preenchimento interno ao botão */
+    font-size: 16px; /* Define o tamanho da fonte */
+    background-color: #0c62ed; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+  
+.teclado-container button:hover {
+    background-color: #3e8e41; /* Cor de fundo ao passar o mouse */
+}
+  
+  /* Estilos para o container do resultado */
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+}
+  
+  /* Estilos para o botão de reiniciar jogo */
+.result button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.result button:hover {
+    background-color: #42b6b8b9;
+}
+.dica-container {
+    color: black;
+    font-family: Arial, sans-serif;
+}
+.adicionar-palavra-btn {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #1b9a8f91;
+    color: rgb(1, 1, 1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.formulario-adicionar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+.formulario-adicionar input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.formulario-adicionar button {
+    padding: 8px 16px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}

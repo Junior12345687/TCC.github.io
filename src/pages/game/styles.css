@@ -1,0 +1,111 @@
+/* Estilo geral para o jogo */
+.blink-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+}
+
+/* Painel de Informações */
+.info-panel {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #ffebcd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-panel h1 {
+    color: #ff4500;
+    font-size: 24px;
+}
+
+.info-panel h2 {
+    color: #8b4513;
+    font-size: 20px;
+}
+
+.info-panel p {
+    color: #696969;
+    font-size: 16px;
+}
+
+/* Grid do jogo */
+.grid-board {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 2px 4px rgba(219, 14, 14, 0.1);
+}
+
+/* Estilo personalizado para as células */
+.grid-cell.sea {
+    background-color: #87ceeb;
+}
+
+.grid-cell.sand {
+    background-color: #f4a460;
+}
+
+.grid-cell.castle {
+    background-color: #d2b48c;
+}
+
+.grid-cell.bucket, .grid-cell.beachball, .grid-cell.crab,
+.grid-cell.starfish, .grid-cell.flamingo, .grid-cell.shell,
+.grid-cell.duck, .grid-cell.girl, .grid-cell.boy, 
+.grid-cell.robot, .grid-cell.truck, .grid-cell.jellyfish {
+    background-color: #ffdab9;
+}
+
+/* Controles do jogo */
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.controls img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #dc143c;
+}
