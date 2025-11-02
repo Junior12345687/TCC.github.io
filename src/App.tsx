@@ -89,7 +89,7 @@ function App() {
                           alt={item.title}
                           width="200" height="200" />
                   </a>
-                  <h2>{item.title}</h2>
+                    <h2>{item.title}</h2>
                   { item.excluirItem === false ? <button onClick={() => excluirItem(index)}>Excluir</button> : ''}
               </div>
           ))}

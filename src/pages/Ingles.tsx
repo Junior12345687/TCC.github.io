@@ -17,6 +17,7 @@ export default function Ingles() {
             { title: 'Geometric Shapes With Animals', url: 'https://www.youtube.com/embed/AJeitT6lSVM' },
             { title: 'Geometric Shapes With Animals', url: 'https://www.youtube.com/embed/AJeitT6lSVM' },
             { title: 'Geometric Shapes With Animals', url: 'https://www.youtube.com/embed/AJeitT6lSVM' },
+            { title: 'Geometric Shapes With Animals', url: 'https://www.youtube.com/embed/AJeitT6lSVM' },
             // Outros vídeos...
         ];
     });
@@ -57,7 +58,7 @@ export default function Ingles() {
                         <a href={item.url}>
                             <iframe src={item.url} allowFullScreen title={item.title} width="200px" height="200px"></iframe>
                         </a>
-                        <h2>{item.title}</h2>
+                            <h2>{item.title}</h2>
                         <button onClick={() => deleteVideoIngles(index)}>Excluir</button>
                     </div>
                 ))}

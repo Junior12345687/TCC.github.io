@@ -78,7 +78,7 @@ export default function HistInf() {
                             <button onClick={() => excluirItem(index)}>Excluir</button>
                         </div>
                     ))}
-                    <div className="modulo-adcionar-App">
+                    <div className="modulo-adicionar-App">
                         <h2>Adicionar Historia</h2>
                         <div className="button-group-App">
                             <button onClick={() => setMostrarFormulario(true)}>Adicionar Historia</button>

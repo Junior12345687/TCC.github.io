@@ -2,77 +2,139 @@
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 10% auto;
-    background-color: rgb(53, 233, 233);
+    grid-template-rows: 13% auto;
+    background: linear-gradient(135deg, #7fd67f 0%, #ff9ee0 50%, #ffd166 1000%);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
     overflow: scroll;
+    font-family: 'Comic Sans MS', cursive;
 }
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% {background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Estilo do cabeçalho */
 .custom-header-dv{
     text-align: center;
-    /* color: black; */
+    color: #ff3e7f;
     margin: 2%;
+    text-shadow: 3px 3px 0px #ffd166,
+                 6px 6px 0px rgba(0, 0, 0, 0.1);
+    /* animation: bounce 2s infinite; */
+    padding: 1px;
+}
+
+@keyframes bounce{
+    0%, 100% { transform: translateY(0); }
+    50% {transform: translateY(-10px); }
 }
 
 .custom-header-dv h1{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Luckiest Guy', cursive;
     text-align: center;
+    margin: -1px;
+    font-size: 3.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: inline-block;
 }
+
+.container-mat-dv h2{
+    font-family: 'Bubblegum Sans', cursive;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff3e7f;
+    text-shadow: 2px 2px 0px #ffd166;
+    margin: 5px 0 10px 0;
+    padding: 0;
+}
+
 /* Estilo do container de videos */
 .container-mat-dv {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-content: space-around;
+    gap: 25px;
+    justify-content: center;
     align-items: start;
-    margin-top: 5%;
-    padding: 20px;
-    max-width: 100%;
-    width: calc(100% - 50px);
+    margin-top: 2%;
 }
 
 /* Card de cada materia */
 .image-container-dv {
     width: 100%;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: ease all 0.5s;
+    transition:  all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 15px;
 }
 
-.image-container-dv a{
-    transition: ease all 0.3s;
+.image-container-dv::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 25px;
+    animation: gradientBorder 8s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    translate: opacity 0.3s ease; 
+}
+
+.image-container-dv:hover::before{
+    opacity: 1;
+}
+
+.image-container-dv a {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+    width: 100%;
 }
 
 .image-container-dv a:hover{
-    transform: scale(1.1);
-    transition: ease all 0.3s;
+    transform: scale(1.15) rotate(3deg);
 }
 
 .image-container-dv img {
-    border-radius: 12px;
-    box-shadow: 1px 1px 15px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    border: 5px solid white;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: auto;
 }
 
-.image-container-dv h2{
-    margin: 1rem 0;
-    color: black;
-    font-size: 1.2rem;
+.image-container-dv:hover img {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: #ffd166;
 }
 
 .image-container-dv button{
-    background-color: #ef7466;
-    color: rgb(11, 11, 11);
+    background: linear-gradient(135deg, #ff3e7f 0%, #ffd166 100%,  );
+    color: rgb(227, 12, 12);
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background-coor 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.2);
 }
 
 .image-container-dv button:hover{
-    background-color: #edb976;
+    background: linear-gradient(135deg, #ffd166 0%, #ff3e7f 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilo para o container do formulario de adcionar modulos */
@@ -163,4 +225,64 @@
 }
 .image-container button{
     margin-top: 5px;
+}
+
+.image-container button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Elementos decorativos extras */
+.body-mat-dv::before {
+    content: "⭐";
+    position: fixed;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+    top: 10%;
+    left: 5%;
+}
+
+.body-mat-dv::after{
+    content: "🌈";
+    position: fixed;
+    font-size: 2rem;
+    animation: float 8s ease-in-out infinite reverse;
+    bottom: 10%;
+    right: 5%;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Responsividade para tablets e mobile */
+@media (max-width: 768px){
+    .container-mat-dv {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .custom-header-dv h1{
+        font-size: 2.5rem;
+    }
+
+    .modulo-adicionar-App {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .image-container-dv h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px);}
+}
+
+.image-container-dv {
+    animation: float 3s ease-in-out infinite;
 }

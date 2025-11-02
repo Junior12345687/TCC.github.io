@@ -1,58 +1,340 @@
-/* Estilos geral da pagina */
-.body-most{
+/* Estilos gerais da página - Tema infantil */
+.body-most {
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 10% auto;
-    background-color: #92ecc8;
+    grid-template-rows: 13% auto;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
     overflow: scroll;
-}
-/* Estilo do cabeçalho */
-.custom-header-most{
-    text-align: center;
-    color: black;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.custom-header-most h1{
-    font-family: 'Times New Roman', Times, serif; /* Corrigido o nome da fonte */
-    color: black;
-    text-align: center;
+/* Animação do fundo colorido */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-/* Estilo do container de videos */
-.container-most{
+
+/* Estilo do cabeçalho */
+.custom-header-most {
+    text-align: center;
+    margin: 2%;
+    position: relative;
+    padding: 1px;
+}
+
+.custom-header-most h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 3.5rem;
+    color: #ff3e8a;
+    text-shadow: 
+        3px 3px 0 #ffd700,
+        6px 6px 0 #00ff88,
+        9px 9px 0 #7fd6ff;
+    animation: bounce 2s infinite alternate;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Animação do texto colorido */
+@keyframes rainbowText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Estilo do container de vídeos */
+.container-most {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout responsivo */
-    gap: 20px; /* Espaçamento entre os videos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
     justify-content: space-around;
     align-items: start;
-    margin-top: 5%;
-    padding: 20px; /* Adicionado padding para espaçamento interno */
+    margin-top: 3%;
+    padding: 20px;
     max-width: 100%;
-    width: calc(100% - 50px);
 }
+
 /* Estilo individual dos vídeos */
-.video-container-most{
+.video-container-most {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: ease all 0.5s;
+    transition: all 0.5s ease;
+    position: relative;
 }
+
+.video-container-most::before {
+    content: "🎬";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 2rem;
+    z-index: 2;
+    animation: spin 4s linear infinite;
+}
+
+.video-container-most::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    background-size: 400% 400%;
+    border-radius: 20px;
+    z-index: -1;
+    animation: borderGlow 3s ease infinite;
+    opacity: 0.7;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; opacity: 0.7; }
+    50% { background-position: 100% 50%; opacity: 1; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
 .video-container-most a {
-    transition: ease all 0.3s;
+    transition: all 0.3s ease;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .video-container-most a:hover {
-    transform: scale(1.1);
-    transition: ease all 0.3s;
+    transform: scale(1.15) rotate(2deg);
+    transition: all 0.3s ease;
+}
+.video-container-most h2{
+    font-family: 'Bubblegum Sans', cursive;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 0 #ffd700;
+    margin-top: 10px;
+    padding: 0%;
+}
+
+.video-container-most button{
+    font-family: 'Comic Sans MS', cursive;
+    color: rgb(227,12,12);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffd700 100%);
+    box-shadow: 0 5px 15px rgb(0,0,0,0,2);
 }
 
 /* Estilo do iframe (vídeo) */
-.video-container-most iframe{
-    border-radius: 16px;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5); /* Corrigido o valor da sombra */
-    width: 100%; /* Garantir que o iframe ocupe 100% do container */
-    height: 200px; /* Altura fixa para os vídeos */
+.video-container-most iframe {
+    border-radius: 20px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4)
+                inset 0 -5px 15px rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 200px;
+    border: 5px solid white;
+    background: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container-most:hover iframe{
+    border-color: #ffd700;
+    box-shadow: 
+        0 15px 35px rgba(255, 105, 180, 0.3),
+        inset 0 -5px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Formulario para Adicionar Videos */
+.add-video-most{
+    margin-top: 40px;
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    background: linear-gradient(145deg, #ff9ee0, #7fd6ff);
+    border-radius: 25px;
+    box-shadow: 
+        0 12px 30px rgb(0,0,0,0.2),
+        inset 0 -8px 15px rgba(255, 255, 255, 0.4);
+    margin-top: 30px auto;
+    border: 4px dashed #ffd700;
+    position: relative;
+    animation: pulseFrom 3s infinite;
+}
+
+.add-video-most::before{
+    content: "🎥";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #ffd700);
+    padding: 10px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+@keyframes pulseFrom{
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.add-video-most h2{
+    margin-top: 20px;
+    font-size: 2rem;
+    font-family: 'Fredoka One', cursive;
+    color: #ff3e8a;
+    text-align: center;
+    text-shadow: 2px 2px 0 #ffd700;
+    animation: wiggle 4s ease-in-out infinite;
+}
+
+@keyframes wiggle{
+    0%, 100% { transform: rotate(0deg); }
+    25% {transform: rotate(1deg); }
+    75% { transform: rotate(-1deg);}
+}
+
+.add-video-most input{
+    display: block;
+    width: calc(100% - 24px);
+    margin: 12px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid #ffd700;
+    background-color: rgba(209, 109, 109, 0.9);
+    font-size: 1.1rem;
+    font-family: 'Comic Sans MS', cursive;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.add-video-most input:focus {
+    outline: none;
+    border-color: #ff3e8a;
+    box-shadow: 0 0 20px rgba(255, 62, 138, 0.5);
+    transform: scale(1.05);
+    background-color: rgb(253,253,253);
+    color: black;
+}
+
+.add-video-most input::placeholder {
+    color: #3a0404;
+    font-style: italic;
+}
+
+.add-video-most button {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(45deg, #ff6b6b, #ffd700);
+    color: rgb(202, 84, 84);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-family: 'Comics Sans MS', cursive;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-video-most button::before {
+    content: "➕";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+.add-video-most button:active{
+    transform: translateY(2px) scale(0.98);
+}
+
+.add-video-most button:hover::after{
+    content: "🎉";
+    position: absolute;
+    right: 20px;
+    transform: translateY(-50%);
+    animation: confetti 0.5s ease-out;
+}
+
+/* Efeitos de partículas flutuantes */
+.body-most::after {
+    content: "✦ ✨ ★ 🎈 🎨 🎭";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .container-most {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .custom-header-most h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 480px) {
+    .container-most {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .custom-header-most h1 {
+        font-size: 1.5rem;
+    }
+    
+    .video-container-most::before {
+        font-size: 1.5rem;
+        top: -10px;
+        left: -10px;
+    }
 }

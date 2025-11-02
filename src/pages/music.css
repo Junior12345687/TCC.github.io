@@ -1,25 +1,80 @@
 /* music.css */
-
 /* Estilos gerais */
 .body-music{
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 10% auto;
-    background-color: #ffe431;
+    grid-template-rows: 13% auto;
+    background: linear-gradient(135deg, #7af165 0%, #4d8bff 50%, #ff6bcb 100%);
     overflow: scroll;
     padding: 10px;
-    /* max-width: 1200px; */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+    overflow: scroll;
 }
-
+@keyframes gradientBackground {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+/* Estilo do Cabeçalho */
 .custom-header-music {
     text-align: center;
-    margin-bottom: 20px;
+    color: #ff4081;
+    margin: 2%;
+    text-shadow: 3px 3px 0px #ffd700, 
+                 6px 6px 0px rgba(0,0,0,0.1);
+    animation: bounce 2s infinite;
+    padding: 1px;
+}
+
+@keyframes bounce{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .custom-header-music h1 {
-    font-size: 2.5rem;
-    color: black;
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    margin: -1px;
+    font-size: 3.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+}
+.custom-header-music h1::before {
+    content: "🎵";
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.custom-header-music h1::after {
+    content: "🎶";
+    position: absolute;
+    top: -15px;
+    right: -35px;
+    font-size: 1.8rem;
+    animation: twinkle 2s infinite 0.5s;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0px) rotate(-2deg);}
+    to { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes float{
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+}
+
+@keyframes twinkle{
+    0%, 100% {opacity: 0.3; transform: scale(0.8);}
+    50% {opacity: 1; transform: scale(1.3); }
 }
 
 /* Estilos para o container de vídeos */
@@ -27,12 +82,10 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    justify-content: space-around;
+    gap: 25px;
+    justify-content: center;
     align-items: start;
-    margin-top: 5%;
-    max-width: 100%;
-    width: calc(100% - 50px);
+    margin-top: 2%;
 }
 
 .video-container-music {
@@ -41,11 +94,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: ease all 0.5s;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    padding: 15px;
 }
 
-.video-container-music :hover {
-    transform: translateY(-5px);
+.video-container-music::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    /* background: linear-gradient(45deg, #ff6bcb, #ffeb3b, #4d8bff, #7af165); */
+    border-radius: 25px;
+    animation: gradientBorder 8s ease infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .video-container-music iframe {
@@ -53,58 +119,173 @@
     width: 100%;
     height: 200px;
     border-radius: 15px;
+    border: 3px solid #4d8bff;
 }
 
-.video-container-m h2 {
-    font-size: 1rem;
-    margin: 10px 0;
-    color: #040404;
+.video-container-music h2 {
+    font-family: 'Bubblegum Sans', cursive;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff3e7f;
+    text-shadow: 2px 2px 0px #ffd700;
+    margin-top: 10px;
+    padding: 0%;
+}
+.video-container-music button{
+    font-family: 'Comic Sans MS', cursive;
+    color: #ff4081;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff6bcb 0%, #ffeb3b 100%);
+    box-shadow: 0 5px 15px rgb(0,0,0,0,2);
+}
+
+@keyframes rainbowBorder{
+    0% {background-position: 0% 50% }
+    100% {background-position: 200% 50% }
+}
+
+.video-container-music a {
+    transition: all 0.4s ease;
+    display: block;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.video-container-music a:hover {
+    transform: scale(1.15) rotate(3deg);
+    filter: drop-shadow(0 15px 25px rgba(255, 105, 180, 0.6));
 }
 
 /* Estilos para o formulário de adicionar vídeo */
 .add-video-form-m {
     margin-top: 30px;
-    width: 200%;
-    max-width: 200px; /* Largura máxima do formulário */
-    padding: 20px;
-    background-color: #f43636;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 300px;
+    padding: 25px;
+    background: linear-gradient(145deg, #ff6bcb 0%, #ffeb3b 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     margin: 20px auto;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
+    border: 5px solid #2196f3;
+    position: relative;
+}
+
+.add-video-form-m::before {
+    content: "🎵";
+    font-size: 2rem;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4081;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
 }
 
 .add-video-form-m h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #000000;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #2196f3;
     text-align: center;
+    text-shadow: 2px 2px 0 #ffeb3b;
+    font-weight: bold;
 }
 
 .add-video-form-m input {
     display: block;
     width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 3px solid #4d8bff;
+    border-radius: 15px;
     font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Comic Sans MS', cursive;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.add-video-form-m input:focus {
+    outline: none;
+    border-color: #ff4081;
+    background: white;
+    transform: scale(1.05);
 }
 
 .add-video-form-m button {
+    display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #28a745;
+    padding: 18px;
+    background: linear-gradient(145deg, #ffeb3b 0%, #ff6b6b, #ffd700);
     color: #fff;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    font-size: 1.3rem;
+    font-family: 'Comic Sans MS', cursive;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgb(54, 54, 54);
+    box-shadow: 0 6px 20px rgba(255, 235, 59, 0.4);
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-video-form-m button::before {
+    content: "➕";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
 }
 
 .add-video-form-m button:hover {
-    background-color: #218838;
+    background: linear-gradient(145deg, #ff4081 0%, #ff6bcb 100%);
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.add-video-form-m button:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+/* Elementos decorativos extras */
+.container-music::before {
+    content: "✨";
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    z-index: 1000;
+}
+
+/* Animação de flutuação para os containers */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.video-container-music {
+    animation: float 3s ease-in-out infinite;
+}
+
+.video-container-music:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+.video-container-music:nth-child(3n) {
+    animation-delay: 1s;
 }

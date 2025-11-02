@@ -1,141 +1,317 @@
-.body-App{
+.body-App {
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 10% auto;
-    background-color: #7fd6ff;
+    grid-template-rows: 13% auto;
+    background: linear-gradient(135deg, #7fd6ff 0%, #ff9ee0 50%, #ffd166 100%);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
     overflow: scroll;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
 }
-.custom-header-App{
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.custom-header-App {
     text-align: center;
-    font-style: oblique;
-    color: black;
+    color: #ff3e7f;
     margin: 2%;
+    text-shadow: 3px 3px 0px #ffd166, 
+                 6px 6px 0px rgba(0,0,0,0.1);
+    animation: bounce 2s infinite;
+    padding: 1px;
 }
-.custom-header-App h1{
-  margin: 0%;
-  font-family: 'Times New Roman', 'Times New Roman', Times, serif;
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
+
+.custom-header-App h1 {
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    margin: 0%;
+    font-size: 3.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: inline-block;
+    /* animation: float 3s ease-in-out infinite; */
+    padding: -1px;
+}
+.container-App h2{
+    font-family: 'Bubblegum Sans', cursive;
+    text-align: center;
+    font-size: 2rem;
+    color: #ff3e7f;
+    text-shadow: 2px 2px 0px #ffd166;
+    margin-top: 10px;
+    padding: 0%;
+}
+
 .body-App .container-App {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 17% 17% 17% 17% 17%;
-  justify-content: space-around;
-  align-items: start;
-  margin-top: 5%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+    margin-top: 2%;
 }
+
 .body-App .container-App .image-container-App {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: ease all 0.5s;
-}
-.body-App .container-App .image-container-App a{
-  transition: ease all 0.3s;
-  
-}
-.body-App .container-App .image-container-App a:hover{
-  transform: scale(1.1);
-  transition: ease all 0.3s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
 }
 
-.body-App .container-App .image-container-App img{
-  border-radius: 12px;
-  box-shadow: 1px 1px 15px 15px;
+.body-App .container-App .image-container-App::before {
+    content: "*";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    /* background: linear-gradient(45deg, #ff3e7f, #7fd6ff, #ffd166, #4dffea); */
+    border-radius: 25px;
+    z-index: -1;
+    /* opacity: 0; */
+    transition: opacity 0.3s ease;
 }
-/* Estilos para o container do formulário de adicionar módulo */
+
+.body-App .container-App .image-container-App:hover::before {
+    opacity: 1;
+    animation: gradientBorder 6s ease infinite;
+}
+
+.body-App .container-App .image-container-App a {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+    width: 100%;
+}
+
+.body-App .container-App .image-container-App a:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.body-App .container-App .image-container-App img {
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border: 5px solid white;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.body-App .container-App .image-container-App img:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border-color: #ffd166;
+}
+
+/* Estilos para o container do formulário - versão infantil */
 .modulo-adicionar-App {
-  width: 100%;
-  max-width: calc(100% - 100px);
-  padding: 20px;
-  background-color: #2ac0d7;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    background: linear-gradient(135deg, #2ac0d7 0%, #ff6b9d 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    border: 8px dashed #ffd166;
+    animation: pulse 3s infinite;
 }
 
-/* Estilos para os inputs e o botão no formulário */
-.modulo-adicionar-App form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+@keyframes pulse {
+    0% { border-color: #ffd166; }
+    50% { border-color: #ff3e7f; }
+    100% { border-color: #ffd166; }
 }
-.modulo-adicionar-App input[type="radio"]
+
+.modulo-adicionar-App form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .modulo-adicionar-App input[type="text"],
 .modulo-adicionar-App input[type="color"],
 .modulo-adicionar-App input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #151414;
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 4px solid #ffd166;
+    background-color: rgb(148, 78, 78);
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive;
+    transition: all 0.3s ease;
 }
 
-/* Estilo específico para o seletor de cor */
+.modulo-adicionar-App input:focus {
+    border-color: #ff3e7f;
+    box-shadow: 0 0 10px #ff3e7f;
+    transform: scale(1.05);
+}
+
 .modulo-adicionar-App input[type="color"] {
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  border: none;
-  cursor: pointer;
+    width: 3px;
+    height: 3px;
+    padding: 0;
+    border: 4px solid #ffd166;
+    border-radius: 10%;
+    cursor: pointer;
 }
 
-/* Estilos para o botão de submissão */
 .modulo-adicionar-App button {
-  padding: 16px;
-  font-size: 16px;
-  background-color: #b5f67c;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    padding: 18px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #b5f67c 0%, #4dffea 100%);
+    color: #d61e1e;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Efeito hover no botão */
 .modulo-adicionar-App button:hover {
-  background-color: #05494d;
+    background: linear-gradient(135deg, #ffd166 0%, #ff3e7f 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
-.modulo-adicionar-App h2{
-  color: #000000;
-  margin-bottom: 1.5rem;
-  text-align: center;
+
+.modulo-adicionar-App h2 {
+    color: rgb(177, 33, 33);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0px #333;
 }
-/* Estilos para a lista de matérias carregadas */
+
+/* Estilos para a lista de matérias - versão infantil */
 .materias-list {
-  margin-top: 40px;
+    margin-top: 40px;
+    padding: 20px;
 }
 
 .materias-list h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #000000;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff3e7f;
+    text-align: center;
+    text-shadow: 2px 2px 0px #ffd166;
 }
 
 .materias-list ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 .materias-list li {
-  background-color: #ea6e6e;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 18px;
+    background: linear-gradient(135deg, #ea6e6e 0%, #ff9ee0 100%);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border: 4px solid white;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-.image-container{
-  position: relative;
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
-  background-color: #000000;
+
+.materias-list li:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
-.image-container h2{
-  margin-top: 10px;
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #7fd6ff, #ff9ee0);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-.image-container button{
-  margin-top: 5px;
+
+.image-container h2 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.image-container button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff3e7f, #ffd166);
+    color: rgb(255, 251, 251);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.image-container button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Elementos decorativos extras */
+.body-App::before {
+    content: "⭐";
+    position: fixed;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Responsividade para tablets e mobile */
+@media (max-width: 768px) {
+    .body-App .container-App {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .custom-header-App h1 {
+        font-size: 2rem;
+    }
+    
+    .modulo-adicionar-App {
+        width: 95%;
+        padding: 15px;
+    }
+}
+/* Animação de flutuação aos containers */
+.image-container-App{
+    animation: float 3s ease-in-out infinite;
+}
+
+.image-container-App:nth-child(2n){
+    animation-delay: 0.5s;
+}
+
+.image-container-App:nth-child(3n){
+    animation-delay: 1s;
 }

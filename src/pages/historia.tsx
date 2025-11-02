@@ -57,7 +57,7 @@ export default function Historia() {
                             <a href={item.url}>
                                 <iframe src={item.url} allowFullScreen title={item.title}></iframe>
                             </a>
-                            <h2>{item.title}</h2>
+                               <h2>{item.title}</h2>               
                             <button onClick={() => deleteVideomost(index)}> Excluir </button>
                         </div>
                     ))}

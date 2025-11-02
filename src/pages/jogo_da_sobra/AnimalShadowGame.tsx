@@ -115,7 +115,7 @@ const AnimalShadowGame: React.FC = () => {
             </div>
             {!isCompleted && (
                 <button onClick={resetGame} className="reset-button">
-                    Reiniciar o jogo
+                    Reiniciar o Jogo
                 </button>
             )}
         </div>

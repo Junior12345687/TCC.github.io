@@ -1,149 +1,293 @@
 body {
-    background-color: #09eff33c; /* Cor de fundo da página */
-    margin: 0; /* Remove margens padrão */
-    font-family: Arial, sans-serif; /* Fonte padrão */
-    /* height: 100vh; */
+    background: linear-gradient(135deg, #0aece1 0%, #ff6bcb 100%); /* Fundo gradiente colorido */
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais divertida */
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); }
+    50% { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+    100% { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
 }
 
 /* Estilos para o container do jogo */
 .jogo-container {
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    text-align: center;
-    background-color: rgb(36, 241, 231);
-    color: black;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0aece1 0%, #ff6bcb 25%, #ffa400 50%, #7bed9f 75%, #5352ed 100%);
+    background-size: 400% 400%;
+    animation: gradientBackground 8s ease infinite;
+    padding: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-
-  /* Estilos para o texto de boas-vindas */
+/* Estilos para o texto de boas-vindas */
 #text {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
-    color: #333;
+    color: #111010;
+    text-shadow: 2px 2px 0 #ffd166;
+    animation: bounce 2s infinite;
 }
 
-  /* Estilos para o botão de iniciar jogo */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Estilos para o botão de iniciar jogo */
 button {
-    background-color: #297eb7;
+    background: linear-gradient(to bottom, #4cc9f0, #4361ee);
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 3px;
+    border-radius: 50px;
     cursor: pointer;
-    max-width: 150px;
-    margin:  0 auto;
+    max-width: 180px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #3a0ca3;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
 }
-  
+
 button:hover {
-    background-color: #10e8c0;
+    background: linear-gradient(to bottom, #f72585, #b5179e);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 #7209b7;
 }
-  
-  /* Estilos para o container da palavra */
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #7209b7;
+}
+
+/* Estilos para o container da palavra */
 .palavra-container {
     margin-top: 20px;
-    font-size: 24px;
-    color: black;
+    font-size: 32px;
+    color: #560bad;
+    font-weight: bold;
+    letter-spacing: 8px;
 }
-  
-  /* Estilos para as letras da palavra */
+
+/* Estilos para as letras da palavra */
 .letra {
-    margin-right: 10px;
-    font-size: 24px;
-    color: black;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 36px;
+    color: #f72585;
+    min-width: 40px;
+    height: 50px;
+    border-bottom: 4px solid #4cc9f0;
+    text-align: center;
+    animation: pulse 1.5s infinite;
 }
-  
-  /* Estilos para o container da forca */
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para o container da forca */
 .forca-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-  /* Estilos para a imagem da forca */
+/* Estilos para a imagem da forca */
 .forca-container img {
     width: 50%;
     height: 50%;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
 }
 
 /* Estilos para o container do teclado */
 .teclado-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    margin-top: 20px; /* Adiciona um espaço acima do teclado */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
   
-  /* Estilos para os botões das letras */
+/* Estilos para os botões das letras */
 .teclado-container button {
-    flex: 0 0 12.5%; /* Cada botão ocupará 12.5% da largura do container (8 botões por linha) */
-    margin: 5px; /* Adiciona um espaço entre os botões */
-    padding: 10px; /* Adiciona um preenchimento interno ao botão */
-    font-size: 16px; /* Define o tamanho da fonte */
-    background-color: #0c62ed; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Arredonda os cantos do botão */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    flex: 0 0 calc(100% / 8 - 10px);
+    margin: 5px;
+    padding: 12px 5px;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #ffd166, #ff9e00);
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 0 #e85d04;
+    transition: all 0.2s;
 }
-  
+
 .teclado-container button:hover {
-    background-color: #3e8e41; /* Cor de fundo ao passar o mouse */
+    background: linear-gradient(to bottom, #4cc9f0, #4361ee);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 0 #3a0ca3;
 }
-  
-  /* Estilos para o container do resultado */
+
+.teclado-container button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #3a0ca3;
+}
+
+/* Estilos para o container do resultado */
 .result {
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 15px;
+    animation: pop 0.5s;
 }
-  
-  /* Estilos para o botão de reiniciar jogo */
+
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Estilos para o botão de reiniciar jogo */
 .result button {
-    background-color: #4CAF50;
+    background: linear-gradient(to bottom, #06d6a0, #04a777);
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 0 #028a63;
 }
-  
+
 .result button:hover {
-    background-color: #42b6b8b9;
+    background: linear-gradient(to bottom, #ffd166, #ff9e00);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 #e85d04;
 }
+
 .dica-container {
-    color: black;
-    font-family: Arial, sans-serif;
+    color: #560bad;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 500px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
+
 .adicionar-palavra-btn {
     margin: 10px;
-    padding: 8px 16px;
-    background-color: #1b9a8f91;
-    color: rgb(1, 1, 1);
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #7209b7, #560bad);
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 3px 0 #3a0ca3;
+    transition: all 0.2s;
 }
+
+.adicionar-palavra-btn:hover {
+    background: linear-gradient(to bottom, #f72585, #b5179e);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 0 #7209b7;
+}
+
 .formulario-adicionar {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
-    padding: 15px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
+    padding: 20px;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 15px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s;
 }
+
+@keyframes slideDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
 .formulario-adicionar input {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 2px solid #4cc9f0;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
+
+.formulario-adicionar input:focus {
+    outline: none;
+    border-color: #f72585;
+    box-shadow: 0 0 0 3px rgba(247, 37, 133, 0.3);
+}
+
 .formulario-adicionar button {
-    padding: 8px 16px;
-    background-color: #2196f3;
+    padding: 12px 20px;
+    background: linear-gradient(to bottom, #06d6a0, #04a777);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
-    
+    font-size: 16px;
+    box-shadow: 0 3px 0 #028a63;
+    transition: all 0.2s;
+}
+
+.formulario-adicionar button:hover {
+    background: linear-gradient(to bottom, #ffd166, #ff9e00);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 0 #e85d04;
+}
+
+/* Adicionando elementos decorativos */
+.jogo-container::before {
+    content: "✨";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    animation: twinkle 2s infinite;
+}
+
+.jogo-container::after {
+    content: "🎮";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    animation: bounce 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }

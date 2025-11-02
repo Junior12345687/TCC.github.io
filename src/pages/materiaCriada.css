@@ -1,24 +1,35 @@
-/* Estilos gerais */
+/* Estilos gerais - Tema Infantil */
 .materia-criada{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: 10% auto;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     transition: background-color 0.3s ease;
+    background: linear-gradient(135deg, #6ecbf5 0%, #059ee3 100%);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .custom-header-materia-criada {
     text-align: center;
-    color: #000000;
-    margin: 8%;
+    color: #ffffff;
+    margin: 5% 0 2% 0;
+    text-shadow: 2px 2px 0 #ff6b6b, 4px 4px 0 #ffd166;
 }
 
 .custom-header-materia-criada h1 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
 
 /* Container das matérias */
@@ -26,174 +37,289 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     align-items: start;
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 20px;
     max-width: 100%;
     width: calc(100% - 50px);
 }
 
-/* Card de cada matéria */
+/* Card de cada matéria - Estilo Infantil */
 .imagem-container-mateira {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: ease all 0.5s;
+    transition: all 0.5s ease;
+    position: relative;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+    border: 4px solid #ffd166;
+}
+
+.imagem-container-mateira::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    z-index: -1;
+    border-radius: 25px;
+    opacity: 0.7;
 }
 
 .imagem-container-mateira a {
-    transition: ease all 0.3s;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
 }
 
 .imagem-container-mateira a:hover {
-    transform: scale(1.1);
-    transition: ease all 0.3s;
+    transform: scale(1.1) rotate(5deg);
+    transition: all 0.3s ease;
 }
 
 .imagem-container-mateira img {
-    border-radius: 8px;
-    box-shadow: 1px 1px 15px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #ffffff;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
 .imagem-container-mateira h2 {
-    margin: 0;
-    color: #a5aaaf;
+    margin: 10px 0 0 0;
+    color: #333;
     font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #ffd166;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 3px 0 #ffb700;
 }
 
-/* Botão de adicionar matéria */
+/* Botão de adicionar matéria - Estilo Infantil */
 .adicionar-materia-btn {
-    padding: 12px 25px;
-    background-color: #4CAF50;
-    color: rgb(7, 7, 7);
+    padding: 15px 30px;
+    background: linear-gradient(to bottom, #ff6b6b, #ff5252);
+    color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     align-self: center;
     grid-column: 1 / -1;
-    max-width: 250px;
+    max-width: 300px;
     margin: 20px auto;
+    box-shadow: 0 6px 0 #d32f2f, 0 8px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.adicionar-materia-btn::before {
+    content: "+";
+    margin-right: 10px;
+    font-size: 1.5rem;
 }
 
 .adicionar-materia-btn:hover {
-    background-color: #45a049;
+    background: linear-gradient(to bottom, #ff5252, #ff6b6b);
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 #d32f2f, 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Formulário de adição */
+.adicionar-materia-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #d32f2f, 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Formulário de adição - Estilo Infantil */
 .adicionar-materia-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 25px;
-    background-color: rgba(0, 0, 0, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffd166 0%, #ffb700 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     grid-column: 1 / -1;
     max-width: 700px;
     margin: 0 auto;
     width: 100%;
+    border: 5px solid #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.adicionar-materia-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ff6b6b,
+        #ff6b6b 10px,
+        #4ecdc4 10px,
+        #4ecdc4 20px
+    );
 }
 
 .adicionar-materia-form input[type="text"] {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    padding: 15px;
+    border: 3px dashed #4ecdc4;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .adicionar-materia-form input[type="text"]:focus {
     outline: none;
-    border-color: #4CAF50;
+    border: 3px solid #ff6b6b;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
 }
 
-/* Seletor de cor */
+/* Seletor de cor - Estilo Infantil */
 .color-picker {
     display: flex;
     align-items: center;
     gap: 15px;
     margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+    border: 3px dotted #96ceb4;
 }
 
 .color-picker label {
     font-weight: bold;
-    color: #555;
+    color: #333;
+    font-size: 1.1rem;
 }
 
 .color-picker input[type="color"] {
-    width: 50px;
-    height: 30px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 60px;
+    height: 40px;
+    border: 3px solid #4ecdc4;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Botões do formulário */
+/* Botões do formulário - Estilo Infantil */
 .form-buttons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .form-buttons button {
-    padding: 12px 25px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 6px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     transition: all 0.3s ease;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 .form-buttons button:first-child {
-    background-color: #4CAF50;
+    background: linear-gradient(to bottom, #4ecdc4, #2bbbad);
     color: white;
 }
 
 .form-buttons button:first-child:hover {
-    background-color: #45a049;
+    background: linear-gradient(to bottom, #2bbbad, #4ecdc4);
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .form-buttons button:last-child {
-    background-color: #f44336;
+    background: linear-gradient(to bottom, #ff9e7d, #ff7b5c);
     color: white;
 }
 
 .form-buttons button:last-child:hover {
-    background-color: #d32f2f;
+    background: linear-gradient(to bottom, #ff7b5c, #ff9e7d);
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Efeitos especiais para engajamento */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.imagem-container-mateira:nth-child(odd) {
+    animation: pulse 3s infinite;
+}
+
+.imagem-container-mateira:nth-child(even) {
+    animation: pulse 3s infinite 1.5s;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
+    .container-materia-criada {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
     }
     
-    .custom-header h1 {
+    .custom-header-materia-criada h1 {
         font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-    
-    .image-container {
-        max-width: 300px;
-        margin: 0 auto;
     }
     
     .adicionar-materia-form {
         padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-materia-criada {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .imagem-container-mateira {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .adicionar-materia-form {
+        padding: 15px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-buttons button {
+        width: 100%;
     }
 }

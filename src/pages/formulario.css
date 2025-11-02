@@ -1,48 +1,125 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
+    gap: 15px;
+    max-width: 320px;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    padding: 25px;
+    border: 3px solid #FF6B8B;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #A1E3FF 0%, #FFD6E7 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+    animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    70% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .label {
     font-weight: bold;
-    
+    color: #FF4081;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .input {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #4FC3F7;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input:focus {
+    border-color: #FF4081;
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.5);
+    transform: scale(1.02);
+}
+
+.input:hover {
+    border-color: #FF9800;
 }
 
 .colorInput {
     padding: 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #4FC3F7;
+    height: 45px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.colorInput:hover {
+    transform: scale(1.05);
 }
 
 .button {
-    padding: 10px;
-    border-radius: 4px;
+    padding: 12px 20px;
+    border-radius: 12px;
     border: none;
-    background-color: #97c2f1;
-    color: #8e5e5e;
+    background: linear-gradient(45deg, #FF4081, #FF9800);
+    color: white;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
+    margin-top: 10px;
 }
 
 .button:hover {
-    background-color: #8ed4ef7f;
+    background: linear-gradient(45deg, #FF9800, #FF4081);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4);
+}
+
+.button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* Efeitos especiais para engajar crianças */
+.formGroup:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.formGroup:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+/* Adicionando alguns elementos visuais extras */
+.form::before {
+    content: "✨";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 24px;
+    animation: twinkle 2s infinite;
+}
+
+.form::after {
+    content: "🎨";
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    font-size: 24px;
+    animation: twinkle 2s infinite 1s;
+}
+
+@keyframes twinkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
 }

@@ -80,7 +80,7 @@ export default function Materias() {
                             <a href={item.link}>
                                 <img src={item.url} alt={item.title} width="200px" height="200px" />
                             </a>
-                            <h2>{item.title}</h2>
+                                <h2>{item.title}</h2>
                             <button onClick={() => excluirItem(index)}>Excluir</button>
                         </div>
                     ))}
